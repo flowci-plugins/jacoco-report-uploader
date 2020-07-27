@@ -1,0 +1,10 @@
+name: jacoco-report-uploader
+version: 1.0.0
+
+script: |
+  python3 -m pip install 'bs4==0.0.1'
+  cd ${FLOWCI_GIT_REPO}
+  plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/jacoco-report-uploader
+
+  mvn jacoco:report || true
+  python3 ${plugindir}/src/jacoco.py
