@@ -1,5 +1,6 @@
 name: jacoco-report-uploader
 version: 1.0.0
+icon: "jacoco.png"
 
 script: |
   python3 -m pip install 'bs4==0.0.1'
