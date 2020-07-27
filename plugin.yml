@@ -4,6 +4,7 @@ version: 1.0.0
 script: |
   python3 -m pip install 'bs4==0.0.1'
   cd ${FLOWCI_GIT_REPO}
+  export MAVEN_OPTS="-Dmaven.repo.local=${FLOWCI_AGENT_WORKSPACE}/.m2"
   plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/jacoco-report-uploader
 
   mvn jacoco:report || true
